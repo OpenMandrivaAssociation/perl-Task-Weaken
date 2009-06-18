@@ -9,7 +9,7 @@ License:    GPL+ or Artistic
 Group:      Development/Perl
 Summary:    Ensure that a platform has weaken support
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source:     http://www.cpan.org/modules/by-module/Task/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:    http://www.cpan.org/modules/by-module/Task/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires: perl(File::Spec)
 BuildRequires: perl(Scalar::Util)
