@@ -1,23 +1,21 @@
+%define upstream_name    Task-Weaken
+%define upstream_version 1.03
 
-%define realname   Task-Weaken
-%define version    1.02
-%define release    %mkrel 1
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
+License:    GPL+ or Artistic
 Group:      Development/Perl
 Summary:    Ensure that a platform has weaken support
-Source:     http://www.cpan.org/modules/by-module/Task/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source:     http://www.cpan.org/modules/by-module/Task/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(File::Spec)
 BuildRequires: perl(Scalar::Util)
 BuildRequires: perl(Test::More)
-
 BuildArch: noarch
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 One recurring problem in modules that use the Scalar::Util manpage's
@@ -33,7 +31,7 @@ Most notably this is RedHat Linux at time of writing, but other come and go
 and do the same thing, hence "recurring problem".
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -54,5 +52,4 @@ rm -rf %buildroot
 %doc README LICENSE Changes
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
 
