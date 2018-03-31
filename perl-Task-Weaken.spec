@@ -1,10 +1,10 @@
 %define modname	Task-Weaken
-%define modver	1.04
+%define modver	1.05
 
 Summary:	Ensure that a platform has weaken support
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	15
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -45,4 +45,3 @@ make test
 %doc README LICENSE Changes
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
-
