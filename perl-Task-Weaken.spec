@@ -4,7 +4,7 @@
 Summary:	Ensure that a platform has weaken support
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	3
+Release:	4
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Task::Weaken
