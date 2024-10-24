@@ -1,14 +1,13 @@
 %define modname	Task-Weaken
-%define modver	1.06
 
 Summary:	Ensure that a platform has weaken support
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	4
+Version:	1.06
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Task::Weaken
-Source0:	http://www.cpan.org/modules/by-module/Task/%{modname}-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Task/%{modname}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(File::Spec)
 BuildRequires:	perl(Scalar::Util)
@@ -29,17 +28,17 @@ Most notably this is RedHat Linux at time of writing, but other come and go
 and do the same thing, hence "recurring problem".
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -p1 -n %{modname}-%{version}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
-%make
+%make_build
 
 %check
 make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc README LICENSE Changes
