@@ -9,6 +9,7 @@ Group:		Development/Perl
 Url:		https://metacpan.org/pod/Task::Weaken
 Source0:	http://www.cpan.org/modules/by-module/Task/%{modname}-%{version}.tar.gz
 BuildArch:	noarch
+BuildRequires:	make
 BuildRequires:	perl(File::Spec)
 BuildRequires:	perl(Scalar::Util)
 BuildRequires:	perl(Test::More)
